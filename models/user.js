@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       //User {1..n} -- {1} Role
       User.belongsTo(models.Role, {
         as: "role",
-        foreignKey: "id_role", // foreignKey de User
+        foreignKey: "id", // foreignKey de User
       });
     }
   }

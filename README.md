@@ -1,4 +1,4 @@
-# Welcome to my backend app
+# Bienvenido a mi app backend
 
 <details>
   <summary>Contenido 📝</summary>
@@ -7,11 +7,11 @@
     <li><a href="#sobre-el-proyecto">Sobre el proyecto</a></li>
     <li><a href="#deploy-🌟">Deploy</a></li>
     <li><a href="#stack">Stack</a></li>
-    <li><a href="#diagrama-bd">Diagrama</a></li>
+    <!-- <li><a href="#diagrama-bd">Diagrama</a></li> -->
     <li><a href="#instalación-en-local">Instalación</a></li>
-    <li><a href="#endpoints">Endpoints</a></li>
-    <li><a href="#futuras-funcionalidades">Futuras funcionalidades</a></li>
-    <li><a href="#licencia">Licencia</a></li>
+    <!-- <li><a href="#endpoints">Endpoints</a></li> -->
+    <!-- <li><a href="#futuras-funcionalidades">Futuras funcionalidades</a></li> -->
+    <!-- <li><a href="#licencia">Licencia</a></li> -->
     <li><a href="#webgrafia">Webgrafia</a></li>
     <!-- <li><a href="#desarrollo">Desarrollo</a></li> -->
     <li><a href="#contacto">Contacto</a></li>
@@ -29,7 +29,7 @@ Se trata de la web de una clinica dental, en la que el usuario puede registrarse
 ## Deploy 🌟
 
 <div align="center">
-    ⭐🌟⭐<a href="https://www.google.com"><strong>Url a producción </strong></a>⭐🌟⭐
+    ⭐🌟⭐<a href=""><strong>Url a producción </strong></a>⭐🌟⭐
 </div>
 
 ## Stack
@@ -51,9 +51,9 @@ Tecnologías utilizadas:
 </a>
  </div>
 
-## Diagrama BD
+<!-- ## Diagrama BD
 
-!['imagen-db'](./images/sampleDb.png)
+!['imagen-db'](./images/sampleDb.png) -->
 
 ## Instalación en local
 
@@ -63,9 +63,9 @@ Tecnologías utilizadas:
 4. `$ Ejecutamos las migraciones`
 5. `$ Ejecutamos los seeders`
 6. `$ npm run dev`
-7. ...
 
-## Endpoints
+
+<!-- ## Endpoints
 
 <details>
 <summary>Endpoints</summary>
@@ -106,27 +106,26 @@ Tecnologías utilizadas:
 
       - ...
 
-  </details>
+  </details> -->
 
-## Futuras funcionalidades
+<!-- ## Futuras funcionalidades
 
 [ ] Añadir create book  
 [ ] Añadir logs con winston  
 [ ] Validaciones de la solicitud con express-validator  
 [ ] ...
 
-
 ## Licencia
 
-Este proyecto se encuentra bajo licencia de "Mi Nombre"
+Este proyecto se encuentra bajo licencia de "Mi Nombre" -->
 
 ## Webgrafia:
 
 Para conseguir mi objetivo he recopilado información de:
 
-- link a repositorios
-- link a documentacion de librerias externas
-- ...
+- https://developer.mozilla.org/en-US/
+- https://www.w3schools.com/js/default.asp
+- https://sequelize.org/docs/v6/getting-started/
 
 <!-- ## Desarrollo:
 
@@ -138,7 +137,7 @@ console.log("Desarrollado por: " + datata);
 
 ## Contacto
 
-<a href = "mailto:micorreoelectronico@gmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
-<a href="https://www.linkedin.com/in/linkedinUser/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+<a href = "mailto:adrianapardo1998@gmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+<a href="https://www.linkedin.com/in/adriana-pardo-diez/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
 
 </p>

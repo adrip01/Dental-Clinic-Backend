@@ -11,19 +11,19 @@ module.exports = (sequelize, DataTypes) => {
       //User {1} -- {1} Customer
       User.hasOne(models.Customer, {
         as: "customer",
-        foreignKey: "user_id", //foreignKey on Customer
+        foreignKey: "user_id", //foreignKey of Customer
       });
 
       //User {1} -- {1} Doctor
       User.hasOne(models.Doctor, {
         as: "doctor",
-        foreignKey: "user_id", //foreignKey on Doctor
+        foreignKey: "user_id", //foreignKey of Doctor
       });
 
       //User {1..n} -- {1} Role
       User.belongsTo(models.Role, {
         as: "role",
-        foreignKey: "id", // foreignKey de User
+        foreignKey: "role_id", // foreignKey of User
       });
     }
   }

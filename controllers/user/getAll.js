@@ -3,7 +3,7 @@ const { User, Customer, Role } = require("../../models");
 
 const models = require("../../models/index");
 
-console.log(models.sequelize.models);
+// console.log(models.sequelize.models);
 
 module.exports = async (req, res) => {
   let { page } = req.query;

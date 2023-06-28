@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
-const { Student, User } = require("../../models");
-const { successMsg, errorMsg } = require("../../_utils/messages");
+const { Customer, User } = require("../../models");
+const { successMsg } = require("../../_utils/messages");
 
 /**
  * Create new user
@@ -9,8 +9,7 @@ const { successMsg, errorMsg } = require("../../_utils/messages");
  * @param {*} res Response object
  */
 module.exports = async (req, res) => {
-  const { user_first_name, user_last_name, email, password } =
-    req.body;
+  const { user_first_name, user_last_name, email, password } = req.body;
 
   if (password.lenght < 8) {
     return res.status(400).json({
@@ -36,9 +35,7 @@ module.exports = async (req, res) => {
       user_id: user.id,
     };
 
-    const student = await Student.create(newCustomer);
-    //await student.addCourse(2); //metodo generado por sequelize a partir del modelo Course (N:N con Student)
-    //await student.save();
+    const customer = await Customer.create(newCustomer);
 
     res.status(201).json({
       message: successMsg.user.CREATE,

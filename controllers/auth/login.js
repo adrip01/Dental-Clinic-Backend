@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
 const { generateToken } = require("../../_utils/token");
-// const { errorMsg } = require("../../_utils/messages");
+const { errorMsg } = require("../../_utils/messages");
 
 const { Role, User } = require("../../models");
 
@@ -15,7 +15,7 @@ module.exports = async (req, res) => {
   if (!email || !password) {
     return res.status(400).json({
       status: "Error",
-      message: error.message,
+      message: errorMsg.authentication.REQUIERED,
     });
   }
 
@@ -30,7 +30,7 @@ module.exports = async (req, res) => {
     if (!user) {
       return res.status(400).json({
         status: "Error",
-        message: error.message,
+        message: errorMsg.authentication.BADCREDENTIALS,
       });
     }
 
@@ -39,7 +39,7 @@ module.exports = async (req, res) => {
     if (!isMatch) {
       return res.status(400).json({
         status: "Error",
-        message: "Invalid email or password.",
+        message: errorMsg.authentication.BADCREDENTIALS,
       });
     }
 
@@ -55,7 +55,7 @@ module.exports = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       status: "Error",
-      message: error.message,
+      message: errorMsg.authentication.LOGINFAILED,
     });
   }
 };

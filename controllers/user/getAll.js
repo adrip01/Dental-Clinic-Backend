@@ -35,7 +35,7 @@ module.exports = async (req, res) => {
         {
           model: Role,
           as: "role",
-          attributes: { exclude: ["createdAt", "updatedAt"] },
+          attributes: { exclude: ["id", "createdAt", "updatedAt"] },
         },
         {
           model: Customer,

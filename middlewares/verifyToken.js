@@ -23,6 +23,7 @@ module.exports = (req, res, next) => {
 
     // execute next function in middlewares cycle
     next();
+    console.log(decoded);
   } catch (error) {
     res.status(400).json({
       status: "Error",

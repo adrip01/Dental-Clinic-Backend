@@ -1,23 +1,16 @@
 const { errorMsg } = require("../../_utils/messages");
 const { User, Customer, Doctor, Role } = require("../../models");
 
-
 const models = require("../../models/index");
-
 
 module.exports = async (req, res) => {
   try {
-    const user_id = req.decodedToken.userId;
-    console.log(user_id);
+    const { userId } = req;
 
     const user = await User.findOne({
-      where: { id: user_id },
-
-      attributes: [
-        "id",
-        ["user_first_name", "name"],
-        ["user_last_name", "last_name"],
-      ],
+      attributes: {
+        exclude: ["id", "role_id", "password", "createdAt", "updatedAt"],
+      },
 
       include: [
         {
@@ -36,12 +29,13 @@ module.exports = async (req, res) => {
           attributes: { exclude: ["createdAt", "updatedAt"] },
         },
       ],
+      where: { id: userId },
     });
 
     if (!user) {
       return res.status(404).json({
         status: "error",
-        message: "Perfil de usuario no encontrado",
+        message: errorMsg.user.NOTFOUND,
       });
     }
 
@@ -51,7 +45,7 @@ module.exports = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       status: "error",
-      message: error.message,
+      message: errorMsg.user.GETONE,
     });
   }
 };

@@ -10,4 +10,7 @@ router.get("/", verifyToken, isAdmin, userController.getAll);
 /* acces my rpfoile */
 router.get("/profile", verifyToken, userController.userProfile);
 
+/* update my rpfoile */
+router.get("/update-profile", verifyToken, userController.updateProfile);
+
 module.exports = router;

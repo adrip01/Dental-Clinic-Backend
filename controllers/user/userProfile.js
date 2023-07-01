@@ -1,7 +1,6 @@
 const { errorMsg } = require("../../_utils/messages");
-const { User, Customer, Doctor, Role } = require("../../models");
+const { User, Role } = require("../../models");
 
-const models = require("../../models/index");
 
 module.exports = async (req, res) => {
   try {
@@ -17,16 +16,6 @@ module.exports = async (req, res) => {
           model: Role,
           as: "role",
           attributes: { exclude: ["id", "createdAt", "updatedAt"] },
-        },
-        {
-          model: Customer,
-          as: "customer",
-          attributes: { exclude: ["createdAt", "updatedAt"] },
-        },
-        {
-          model: Doctor,
-          as: "doctor",
-          attributes: { exclude: ["createdAt", "updatedAt"] },
         },
       ],
       where: { id: userId },

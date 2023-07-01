@@ -11,6 +11,13 @@ router.get("/", verifyToken, isAdmin, userController.getAll);
 router.get("/profile", verifyToken, userController.userProfile);
 
 /* update my rpfoile */
-router.get("/update-profile", verifyToken, userController.updateProfile);
+router.post("/update-profile", verifyToken, userController.updateProfile);
+
+/* create appointment */
+router.post(
+  "/create-appointment",
+  verifyToken,
+  userController.createAppointment
+);
 
 module.exports = router;

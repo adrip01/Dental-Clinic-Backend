@@ -20,4 +20,11 @@ router.post(
   userController.createAppointment
 );
 
+/* modify appointment */
+router.put(
+  "/update-appointment/:id",
+  verifyToken,
+  userController.updateAppointment
+);
+
 module.exports = router;

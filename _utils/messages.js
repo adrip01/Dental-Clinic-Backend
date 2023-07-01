@@ -27,6 +27,8 @@ const errorMsg = {
   appointment: {
     NOAUTH: "Don't have permission",
     REQUIERED: "Customer and doctor are required.",
+    NOTFOUND: "Appointment not found",
+
   },
 };
 

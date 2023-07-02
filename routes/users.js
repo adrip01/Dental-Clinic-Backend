@@ -41,4 +41,7 @@ router.get(
   userController.findUserAppointments
 );
 
+/* find all appointments as doctor*/
+router.get("/all-appointments", verifyToken, userController.allAppointments);
+
 module.exports = router;

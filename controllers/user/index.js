@@ -6,5 +6,6 @@ userController.updateProfile = require("./updateProfile");
 userController.createAppointment = require("./createAppointment");
 userController.updateAppointment = require("./updateAppointment");
 userController.deleteAppointment = require("./deleteAppointment");
+userController.findUserAppointments = require("./findUserAppointments");
 
 module.exports = userController;

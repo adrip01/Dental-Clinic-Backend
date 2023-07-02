@@ -7,6 +7,7 @@ const errorMsg = {
     GETONE: "Error retreiving user",
     NOTFOUND: "User not found",
     PASSWORDLEN: "Password length can not be less than 8",
+    NOAPPOINT: "This user don't has appointments"
   },
 
   pagination: {

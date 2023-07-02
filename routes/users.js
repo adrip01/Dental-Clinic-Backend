@@ -34,4 +34,11 @@ router.delete(
   userController.deleteAppointment
 );
 
+/* find user appointments */
+router.get(
+  "/user-appointments",
+  verifyToken,
+  userController.findUserAppointments
+);
+
 module.exports = router;

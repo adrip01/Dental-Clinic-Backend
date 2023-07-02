@@ -9,7 +9,6 @@ module.exports = async (req, res) => {
   try {
     let appointment;
 
-    // getting the apointment by id
     appointment = await Appointment.findOne({ where: { id: appointmentId } });
 
     if (!appointment) {
@@ -19,7 +18,7 @@ module.exports = async (req, res) => {
       });
     }
 
-    // is the user a Customer?
+    // is the user the Customer?
     const isCustomer = await Customer.findOne({ where: { user_id: userId } });
     if (isCustomer && isCustomer.id === appointment.customer_id) {
       appointment = await appointment.update({
@@ -28,7 +27,7 @@ module.exports = async (req, res) => {
         time,
       });
     } else {
-      // is the user a Doctor?
+      // is the user the Doctor?
       const isDoctor = await Doctor.findOne({ where: { user_id: userId } });
       if (isDoctor && isDoctor.id === appointment.doctor_id) {
         appointment = await appointment.update({

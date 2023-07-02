@@ -1,11 +1,10 @@
 const { errorMsg } = require("../../_utils/messages");
 const { User, Role } = require("../../models");
 
-
 module.exports = async (req, res) => {
-  try {
-    const { userId } = req;
+  const { userId } = req;
 
+  try {
     const user = await User.findOne({
       attributes: {
         exclude: ["id", "role_id", "password", "createdAt", "updatedAt"],

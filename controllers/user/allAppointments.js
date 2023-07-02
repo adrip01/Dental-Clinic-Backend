@@ -9,9 +9,9 @@ module.exports = async (req, res) => {
     const isDoctor = await Doctor.findOne({ where: { user_id: userId } });
 
     if (!isDoctor) {
-      return res.status(404).json({
+      return res.status(403).json({
         status: "error",
-        message: errorMsg.user.NOTFOUND,
+        message: errorMsg.authentication.NOAUTH,
       });
     }
     const appointments = await Appointment.findAll();

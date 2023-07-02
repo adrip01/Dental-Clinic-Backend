@@ -4,7 +4,7 @@ const { successMsg, errorMsg } = require("../../_utils/messages");
 module.exports = async (req, res) => {
   const { userId } = req;
   const { customer_id, doctor_id, date, time } = req.body;
-  const appointmentId = req.params.id; // Obtener el ID de la cita de los parámetros de la ruta
+  const appointmentId = req.params.id;
 
   try {
     let appointment;

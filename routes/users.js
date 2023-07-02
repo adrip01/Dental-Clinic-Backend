@@ -27,4 +27,11 @@ router.put(
   userController.updateAppointment
 );
 
+/* delete appointment */
+router.delete(
+  "/delete-appointment/:id",
+  verifyToken,
+  userController.deleteAppointment
+);
+
 module.exports = router;

@@ -8,5 +8,6 @@ userController.updateAppointment = require("./updateAppointment");
 userController.deleteAppointment = require("./deleteAppointment");
 userController.findUserAppointments = require("./findUserAppointments");
 userController.allAppointments = require("./allAppointments");
+userController.allCustomers = require("./allCustomers");
 
 module.exports = userController;

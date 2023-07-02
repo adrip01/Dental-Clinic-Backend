@@ -37,7 +37,7 @@ module.exports = async (req, res) => {
           time,
         });
       } else {
-        return res.status(400).json({
+        return res.status(403).json({
           status: "error",
           message: errorMsg.authentication.NOAUTH,
         });

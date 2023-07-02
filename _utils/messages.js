@@ -20,13 +20,13 @@ const errorMsg = {
   },
 
   authentication: {
-    NOAUTH: "Don't have permission",
+    NOAUTH: "Don't have authorization",
     BADCREDENTIALS: "These credentials do not match our records",
     REQUIERED: "Email and Password are required",
     LOGINFAILED: "User login failed",
   },
   appointment: {
-    NOAUTH: "Don't have permission",
+    NOAUTH: "Don't have authorization",
     REQUIERED: "Customer and doctor are required.",
     NOTFOUND: "Appointment not found",
 

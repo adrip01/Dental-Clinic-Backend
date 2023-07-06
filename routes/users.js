@@ -2,15 +2,16 @@ const express = require("express");
 const userController = require("../controllers/user");
 const verifyToken = require("../middlewares/verifyToken");
 const isAdmin = require("../middlewares/isAdmin");
+const isDoctor = require("../middlewares/isDoctor");
 const router = express.Router();
 
-/* GET users listing. */
+/* GET all users listing as admin */
 router.get("/", verifyToken, isAdmin, userController.getAll);
 
-/* acces my rpfoile */
+/* acces my profile as any role */
 router.get("/profile", verifyToken, userController.userProfile);
 
-/* update my rpfoile */
+/* update my rpfoile as any role*/
 router.post("/update-profile", verifyToken, userController.updateProfile);
 
 /* create appointment */
@@ -34,7 +35,7 @@ router.delete(
   userController.deleteAppointment
 );
 
-/* find user appointments */
+/* find user appointments as customer*/
 router.get(
   "/user-appointments",
   verifyToken,
@@ -42,9 +43,19 @@ router.get(
 );
 
 /* find all appointments as doctor*/
-router.get("/all-appointments", verifyToken, userController.allAppointments);
+router.get(
+  "/all-appointments",
+  verifyToken,
+  isDoctor,
+  userController.allAppointments
+);
 
 /* find all customers as doctor*/
-router.get("/all-customers", verifyToken, userController.allCustomers);
+router.get(
+  "/all-customers",
+  verifyToken,
+  isDoctor,
+  userController.allCustomers
+);
 
 module.exports = router;

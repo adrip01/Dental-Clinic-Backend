@@ -53,7 +53,7 @@ Tecnologías utilizadas:
 
 ## Diagrama BD
 
-!['imagen-db'](./images/sampleDb.png)
+!['image-db'](./public/images/DentalClinicDiagram.png)
 
 ## Instalación en local
 
@@ -82,7 +82,7 @@ Tecnologías utilizadas:
             "user_first_name": "Nuevo",
             "user_last_name": "Usuario",
             "email": "nuevo@usuario.com",
-            "password": "password"
+            "password": "12345678"
         }
     ```
 
@@ -95,7 +95,7 @@ Tecnologías utilizadas:
     ```js
         {
             "email": "nuevo@usuario.com",
-            "password": "password"
+            "password": "12345678"
         }
     ```
 
@@ -108,14 +108,12 @@ Tecnologías utilizadas:
     - GET MY PROFILE
 
               GET http://localhost:3000/users/profile
-
-                  Bearer token required
  
     - UPDATE MY PROFILE
 
               POST http://localhost:3000/users/update-profile
 
-                   Bearer token required
+                   
 
     body: 
 
@@ -133,7 +131,7 @@ Tecnologías utilizadas:
 
               POST http://localhost:3000/users/create-appointment
 
-                   Bearer token required
+                   
 
        body: 
 
@@ -150,7 +148,7 @@ Tecnologías utilizadas:
 
               PUT http://localhost:3000/users/update-appointment/3
 
-                   Bearer token required
+                   
 
        body: 
 
@@ -164,27 +162,21 @@ Tecnologías utilizadas:
     ```
     - DELETE APPOINTMENT
 
-              DEL http://localhost:3000/users/delete-appointment/3
-
-                   Bearer token required
+              DEL http://localhost:3000/users/delete-appointment/3                
 
     - FIND USER APPOINTMENTS
 
-              GET http://localhost:3000/users/user-appointments
-
-                   Bearer token required
+              GET http://localhost:3000/users/user-appointments                 
 
     - FIND ALL APPOINTMENTS AS A DOCTOR
 
-              GET http://localhost:3000/users/all-appointments
-
-                   Bearer token required
+              GET http://localhost:3000/users/all-appointments              
 
     - FIND ALL CUSTOMERS AS A DOCTOR
 
               GET http://localhost:3000/users/all-customers
 
-                   Bearer token required
+                   
 
   </details>
 

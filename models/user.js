@@ -52,7 +52,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATE,
         validate: {
           isDate: true,
-          isAfter: "{1}900-0{1}-0{1}",
+          isAfter: "1900-01-01",
         },
       },
       email: {

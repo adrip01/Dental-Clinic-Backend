@@ -5,7 +5,7 @@ const isAdmin = require("../middlewares/isAdmin");
 const isDoctor = require("../middlewares/isDoctor");
 const router = express.Router();
 
-/* GET all users listing as admin */
+/* GET all users list as admin */
 router.get("/", verifyToken, isAdmin, userController.getAll);
 
 /* acces my profile as any role */
@@ -21,6 +21,11 @@ router.post(
   userController.createAppointment
 );
 
+/* find an appointment */
+router.get("/appointment/:id", 
+verifyToken, 
+userController.getAppointment);
+
 /* modify appointment */
 router.put(
   "/update-appointment/:id",
@@ -35,27 +40,20 @@ router.delete(
   userController.deleteAppointment
 );
 
-/* find user appointments as customer*/
+/* find user appointments*/
 router.get(
   "/user-appointments",
   verifyToken,
   userController.findUserAppointments
 );
 
-/* find all appointments as doctor*/
-router.get(
-  "/all-appointments",
-  verifyToken,
-  isDoctor,
-  userController.allAppointments
-);
+/* find all appointments as doctor or admin*/
+router.get("/all-appointments", verifyToken, userController.allAppointments);
 
-/* find all customers as doctor*/
-router.get(
-  "/all-customers",
-  verifyToken,
-  isDoctor,
-  userController.allCustomers
-);
+/* find all customers as doctor or admin*/
+router.get("/all-customers", verifyToken, userController.allCustomers);
+
+/* find all doctors*/
+router.get("/all-doctors", verifyToken, userController.allDoctors);
 
 module.exports = router;

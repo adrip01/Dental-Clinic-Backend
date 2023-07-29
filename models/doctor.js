@@ -11,13 +11,13 @@ module.exports = (sequelize, DataTypes) => {
       //Doctor {1} -- {1} User
       Doctor.belongsTo(models.User, {
         as: "user",
-        foreignKey: "id", //foreignKey of Doctor
+        foreignKey: "user_id", //foreignKey of Doctor
       });
 
       //Doctor {1..n}--{1} Sepeciality
       Doctor.belongsTo(models.Speciality, {
         as: "speciality",
-        foreignKey: "id", //foreignKey of Doctor
+        foreignKey: "spec_id", //foreignKey of Doctor
       });
 
       //Doctor {1}--{n} Appointment

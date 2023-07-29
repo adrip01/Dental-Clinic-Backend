@@ -7,7 +7,7 @@ const errorMsg = {
     GETONE: "Error retreiving user",
     NOTFOUND: "User not found",
     PASSWORDLEN: "Password length can not be less than 8",
-    NOAPPOINT: "This user don't has appointments"
+    NOAPPOINT: "This user don't has appointments",
   },
 
   pagination: {
@@ -29,7 +29,7 @@ const errorMsg = {
     NOAUTH: "Don't have authorization",
     REQUIERED: "Customer and doctor are required.",
     NOTFOUND: "Appointment not found",
-
+    GETONE: "Error retreiving appointment",
   },
 };
 

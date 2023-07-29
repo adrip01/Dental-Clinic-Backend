@@ -34,6 +34,15 @@ module.exports = async (req, res) => {
       });
     }
 
+    const userRole = user.role.role;
+    let customer;
+    let doctor;
+    if (userRole == "user") {
+      customer = await user.getCustomer();
+    } else if (userRole == "doctor") {
+      doctor = await user.getDoctor();
+    }
+
     const isMatch = bcrypt.compareSync(password, user.password);
 
     if (!isMatch) {
@@ -46,7 +55,10 @@ module.exports = async (req, res) => {
     const token = generateToken({
       userId: user.id,
       userName: user.user_first_name,
+      userLastName: user.user_last_name,
       userRole: user.role.role,
+      customerId: customer?.id,
+      doctorId: doctor?.id,
     });
 
     res.status(200).json({

@@ -1,14 +1,13 @@
 const { errorMsg } = require("../../_utils/messages");
 const { User, Customer, Role } = require("../../models");
 
-
 module.exports = async (req, res) => {
   let { page } = req.query;
 
   page = +page;
   if (!page || page < 0) page = 1;
 
-  const LIMIT = 6;
+  const LIMIT = 25;
   const userCount = await User.count();
   const maxPages = Math.ceil(userCount / LIMIT);
 

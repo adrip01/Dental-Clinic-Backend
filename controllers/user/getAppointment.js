@@ -13,7 +13,8 @@ module.exports = async (req, res) => {
     });
 
     res.status(200).json({
-      results: appointment,
+      status: "success",
+      appointment,
     });
   } catch (error) {
     res.status(500).json({
